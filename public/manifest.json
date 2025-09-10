@@ -1,11 +1,16 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "MovieLand",
+  "name": "MovieLand - Movie Search App",
   "icons": [
     {
       "src": "movie192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "movie512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
