@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import './App.css';
 import SearchIcon from './search.svg';
 import MovieCard from './MovieCard';
+import ThemeToggle from './ThemeToggle';
 
 
 const BASE_URL = process.env.REACT_APP_MOVIE_API_URL;
@@ -32,6 +33,7 @@ const App = () => {
             >
                 MovieLand
             </h1>
+            <ThemeToggle />
             <div className="search">
                 <input 
                     type="text" 
