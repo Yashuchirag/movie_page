@@ -169,3 +169,34 @@ h1 {
 .movie:hover img {
   opacity: 0.3;
 }
+
+/* Layout */
+.layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #111;
+    color: #f9d3b4;
+    padding: 2rem 1rem;
+    border-right: 1px solid #333;
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--highlight);
+  }
+  
+  .sidebar p {
+    font-size: 1rem;
+    color: #ccc;
+  }
+  
+  .app {
+    flex: 1;
+    padding: 2rem;
+  }
+  

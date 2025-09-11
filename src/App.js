@@ -3,6 +3,7 @@ import './App.css';
 import SearchIcon from './search.svg';
 import MovieCard from './MovieCard';
 import ThemeToggle from './ThemeToggle';
+import SideBar from './SideBar';
 
 
 const BASE_URL = process.env.REACT_APP_MOVIE_API_URL;
@@ -26,41 +27,44 @@ const App = () => {
     }, []);
 
     return (
-        <div className="app">
-            <h1
-                onClick={() => searchMovies("2024")} 
-                style={{ cursor: "pointer" }}
-            >
-                MovieLand
+        <div className="layout">
+          {/* Left Column */}
+          <SideBar />
+      
+          {/* Main Content */}
+          <main className="app">
+            <h1 onClick={() => searchMovies("2024")} style={{ cursor: "pointer" }}>
+              MovieLand
             </h1>
             <ThemeToggle />
             <div className="search">
-                <input 
-                    type="text" 
-                    placeholder="Search for movies" 
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                <img 
-                    src={SearchIcon} 
-                    alt="search" 
-                    onClick={() => searchMovies(searchTerm)}
-                />
+              <input 
+                type="text" 
+                placeholder="Search for movies" 
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <img 
+                src={SearchIcon} 
+                alt="search" 
+                onClick={() => searchMovies(searchTerm)}
+              />
             </div>
             {movies?.length > 0 
-                ? (
-                    <div className="container">
-                        {movies.map(movie => (
-                            <MovieCard movie={movie} />
-                        ))}
-                    </div>
-                ) : (
-                    <div className="empty">
-                        <h2>No movies found</h2>
-                    </div>
-                )}
+              ? (
+                <div className="container">
+                  {movies.map(movie => (
+                    <MovieCard key={movie.imdbID} movie={movie} />
+                  ))}
+                </div>
+              ) : (
+                <div className="empty">
+                  <h2>No movies found</h2>
+                </div>
+              )}
+          </main>
         </div>
-    );
+      );      
 }
 
 export default App;
