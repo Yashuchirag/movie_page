@@ -19,23 +19,23 @@ const SideBar = ({onNavigate}) => {
             <h4 className="section-title">Filters</h4>
             <div className="filters">
                 <select>
-                <option>Genre</option>
-                <option>Action</option>
-                <option>Comedy</option>
-                <option>Drama</option>
-                <option>Horror</option>
+                    <option>Genre</option>
+                    <option>Action</option>
+                    <option>Comedy</option>
+                    <option>Drama</option>
+                    <option>Horror</option>
                 </select>
                 <select>
-                <option>Year</option>
-                <option>2025</option>
-                <option>2024</option>
-                <option>2023</option>
+                    <option>Year</option>
+                    <option>2025</option>
+                    <option>2024</option>
+                    <option>2023</option>
                 </select>
                 <select>
-                <option>Rating</option>
-                <option>8+</option>
-                <option>7+</option>
-                <option>6+</option>
+                    <option>Rating</option>
+                    <option>8+</option>
+                    <option>7+</option>
+                    <option>6+</option>
                 </select>
             </div>
 
