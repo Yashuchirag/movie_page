@@ -5,7 +5,6 @@ import MovieCard from './MovieCard';
 import ThemeToggle from './ThemeToggle';
 import SideBar from './SideBar';
 
-
 const BASE_URL = process.env.REACT_APP_MOVIE_API_URL;
     
 
@@ -22,6 +21,29 @@ const App = () => {
         setMovies(data.Search || []);
     };
 
+
+    const handleNavigation = (category) => {
+        switch (category) {
+          case "home":
+            searchMovies("2024");
+            break;
+          case "trending":
+            searchMovies("trending");
+            break;
+          case "top":
+            searchMovies("top rated");
+            break;
+          case "upcoming":
+            searchMovies("upcoming");
+            break;
+          case "favorites":
+            searchMovies("upcoming");
+            break;
+          default:
+            break;
+        }
+    };
+    
     useEffect(() => {
         searchMovies("2024");
     }, []);
@@ -29,7 +51,7 @@ const App = () => {
     return (
         <div className="layout">
           {/* Left Column */}
-          <SideBar />
+            <SideBar onNavigate={handleNavigation} />
       
           {/* Main Content */}
           <main className="app">
@@ -43,6 +65,7 @@ const App = () => {
                 placeholder="Search for movies" 
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && searchMovies(searchTerm)}
               />
               <img 
                 src={SearchIcon} 
