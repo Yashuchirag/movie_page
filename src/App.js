@@ -39,6 +39,15 @@ const App = () => {
           case "favorites":
             searchMovies("upcoming");
             break;
+          case "2024":
+            searchMovies("2024");
+            break;
+          case "marvel":
+            searchMovies("marvel");
+            break;
+          case "oscars":
+            searchMovies("oscars");
+            break;
           default:
             break;
         }
